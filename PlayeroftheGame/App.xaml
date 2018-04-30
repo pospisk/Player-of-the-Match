@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="PlayeroftheGame.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Application.Resources>
+        <!--  Application resource dictionary  -->
+        <ResourceDictionary>
+            <Color x:Key="MainRedColor">#f6554d</Color>
+            <Color x:Key="DarkBgColor">#20222b</Color>
+            <Color x:Key="LightBgColor">#4a4d56</Color>
+            <Color x:Key="LinkGrayColor">#7b8792</Color>
+            <Color x:Key="LightTextColor">#ffffff</Color>
+            <Style x:Key="EntryDefault" TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource MainRedColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource LightBgColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource LinkGrayColor}" />
+                <Setter Property="WidthRequest" Value="300" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

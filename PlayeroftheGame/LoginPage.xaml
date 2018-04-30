@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PlayeroftheGame.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="{StaticResource DarkBgColor}">
+                <StackLayout HorizontalOptions="Center" VerticalOptions="StartAndExpand">
+                    <Image Source="PoTG.png" WidthRequest="250" />
+                </StackLayout>
+                <StackLayout
+                    Padding="50,0"
+                    HorizontalOptions="Center"
+                    Spacing="10"
+                    VerticalOptions="CenterAndExpand">
+                    <Label
+                        FontSize="Large"
+                        HorizontalOptions="Center"
+                        Text="Login"
+                        TextColor="{StaticResource MainRedColor}" />
+
+                    <Entry Placeholder="Username" Style="{StaticResource EntryDefault}" />
+                    <Entry
+                        IsPassword="true"
+                        Placeholder="Password"
+                        Style="{StaticResource EntryDefault}" />
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button
+                            x:Name="Facebook_Clicked"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            BackgroundColor="{StaticResource LightBgColor}"
+                            BorderRadius="30"
+                            FontSize="12"
+                            Text="Facebook"
+                            TextColor="{StaticResource LinkGrayColor}" />
+                        <Button
+                            x:Name="SignUp_Clicked"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            BackgroundColor="{StaticResource LightBgColor}"
+                            BorderRadius="30"
+                            FontSize="12"
+                            Text="Sign up"
+                            TextColor="{StaticResource LinkGrayColor}" />
+                        <Button
+                            x:Name="Login_Clicked"
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            BackgroundColor="{StaticResource LightBgColor}"
+                            BorderRadius="30"
+                            FontSize="12"
+                            Text="Login"
+                            TextColor="{StaticResource LinkGrayColor}" />
+                    </Grid>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+                    <Button
+                        x:Name="NoLogin_Clicked"
+                        BackgroundColor="Transparent"
+                        BorderRadius="25"
+                        Clicked="WithoutLogin_Clicked"
+                        Text="Continue without login"
+                        TextColor="White" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
