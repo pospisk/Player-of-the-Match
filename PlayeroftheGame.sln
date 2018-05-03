@@ -3,20 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayeroftheGame.Android", "PlayeroftheGame\PlayeroftheGame.Android\PlayeroftheGame.Android.csproj", "{47A69FF0-61E2-4480-85D5-E459E0BD2137}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayeroftheGame.Android", "potmquick\PlayeroftheGame.Android\PlayeroftheGame.Android.csproj", "{47A69FF0-61E2-4480-85D5-E459E0BD2137}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayeroftheGame.iOS", "PlayeroftheGame\PlayeroftheGame.iOS\PlayeroftheGame.iOS.csproj", "{D885FC30-2D7C-4F20-AC18-B847C848E204}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayeroftheGame.iOS", "potmquick\PlayeroftheGame.iOS\PlayeroftheGame.iOS.csproj", "{D885FC30-2D7C-4F20-AC18-B847C848E204}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayeroftheGame.UWP", "PlayeroftheGame\PlayeroftheGame.UWP\PlayeroftheGame.UWP.csproj", "{7FF33141-E6AE-4787-8C76-2CDFA7E9BAD5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayeroftheGame.UWP", "potmquick\PlayeroftheGame.UWP\PlayeroftheGame.UWP.csproj", "{7FF33141-E6AE-4787-8C76-2CDFA7E9BAD5}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PlayeroftheGame", "PlayeroftheGame\PlayeroftheGame\PlayeroftheGame.shproj", "{4F70970B-4551-4F30-8F71-AA46AE7A390E}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PlayeroftheGame", "potmquick\PlayeroftheGame\PlayeroftheGame.shproj", "{4F70970B-4551-4F30-8F71-AA46AE7A390E}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		PlayeroftheGame\PlayeroftheGame\PlayeroftheGame.projitems*{47a69ff0-61e2-4480-85d5-e459e0bd2137}*SharedItemsImports = 4
-		PlayeroftheGame\PlayeroftheGame\PlayeroftheGame.projitems*{4f70970b-4551-4f30-8f71-aa46ae7a390e}*SharedItemsImports = 13
-		PlayeroftheGame\PlayeroftheGame\PlayeroftheGame.projitems*{7ff33141-e6ae-4787-8c76-2cdfa7e9bad5}*SharedItemsImports = 4
-		PlayeroftheGame\PlayeroftheGame\PlayeroftheGame.projitems*{d885fc30-2d7c-4f20-ac18-b847c848e204}*SharedItemsImports = 4
+		potmquick\PlayeroftheGame\PlayeroftheGame.projitems*{47a69ff0-61e2-4480-85d5-e459e0bd2137}*SharedItemsImports = 4
+		potmquick\PlayeroftheGame\PlayeroftheGame.projitems*{4f70970b-4551-4f30-8f71-aa46ae7a390e}*SharedItemsImports = 13
+		potmquick\PlayeroftheGame\PlayeroftheGame.projitems*{7ff33141-e6ae-4787-8c76-2cdfa7e9bad5}*SharedItemsImports = 4
+		potmquick\PlayeroftheGame\PlayeroftheGame.projitems*{d885fc30-2d7c-4f20-ac18-b847c848e204}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

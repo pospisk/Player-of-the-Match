@@ -13,14 +13,14 @@ namespace PlayeroftheGame
 		{
 			InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage())
-            {
+            //MainPage = new NavigationPage(new LoginPage())
+            //{
 
-              //  BarBackgroundColor = Color.IndianRed,
-              //  BarTextColor = Color.Blue
-            };
-			//MainPage = new PlayeroftheGame.MainPage();
-		}
+            //  //  BarBackgroundColor = Color.IndianRed,
+            //  //  BarTextColor = Color.Blue
+            //};
+            MainPage = new MainPage();
+        }
 
         protected override void OnStart ()
 		{
