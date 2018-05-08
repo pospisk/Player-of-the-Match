@@ -19,7 +19,7 @@ namespace PlayeroftheGame
             //  //  BarBackgroundColor = Color.IndianRed,
             //  //  BarTextColor = Color.Blue
             //};
-            MainPage = new MainPage();
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart ()

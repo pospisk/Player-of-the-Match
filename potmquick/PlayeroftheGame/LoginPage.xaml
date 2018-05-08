@@ -2,8 +2,16 @@
 <ContentPage
     x:Class="PlayeroftheGame.LoginPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    
+    xmlns:viewModels1="clr-namespace:PlayeroftheGame.ViewModels">
+
+    <ContentPage.BindingContext>
+        <viewModels1:LoginViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
+        
+        
         <ScrollView>
             <StackLayout BackgroundColor="{StaticResource DarkBgColor}">
                 <StackLayout HorizontalOptions="Center" VerticalOptions="StartAndExpand">
@@ -20,9 +28,13 @@
                         Text="Login"
                         TextColor="{StaticResource MainRedColor}" />
 
-                    <Entry Placeholder="Username" Style="{StaticResource EntryDefault}" />
+                    <Entry 
+                        Placeholder="Username" 
+                        Text="{Binding UsErNaMe}" 
+                        Style="{StaticResource EntryDefault}" />
                     <Entry
                         IsPassword="true"
+                        Text="{Binding PaSsWoRd}"
                         Placeholder="Password"
                         Style="{StaticResource EntryDefault}" />
 
@@ -61,6 +73,7 @@
                             BorderRadius="30"
                             FontSize="12"
                             Text="Login"
+                            Command="{Binding LoginCommand}"
                             TextColor="{StaticResource LinkGrayColor}" />
                     </Grid>
                 </StackLayout>
