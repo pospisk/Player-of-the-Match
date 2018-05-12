@@ -6,7 +6,7 @@
              ControlTemplate="{DynamicResource mainLayout}"
              >
 
-    <flv:FlowListView FlowColumnCount="2" SeparatorVisibility="Default" HasUnevenRows="True"
+    <!--<flv:FlowListView FlowColumnCount="2" SeparatorVisibility="Default" HasUnevenRows="True"
                       FlowItemTappedCommand="{Binding ItemTappedCommand}"
                       FlowItemsSource="{Binding Items}" x:Name="teamListView">
 
@@ -29,6 +29,6 @@
             </DataTemplate>
         </flv:FlowListView.FlowColumnTemplate>
 
-    </flv:FlowListView>
+    </flv:FlowListView>-->
 
 </ContentPage>

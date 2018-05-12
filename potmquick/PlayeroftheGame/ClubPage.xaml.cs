@@ -26,11 +26,11 @@ namespace PlayeroftheGame
         {
             HttpClient client = new HttpClient();
 
-            var response = await client.GetStringAsync("http://api.potg-dev.org/umbraco/Api/Clubs/GetClubs?id=1071");
+            var response = await client.GetStringAsync("http://api.potg-dev.org/umbraco/Api/Club/GetClubs?id=1071");
 
             var clubs = JsonConvert.DeserializeObject<List<Club>>(response);
 
-           // testListView.FlowItemsSource = clubs;
+            clubListView.FlowItemsSource = clubs;
         }
 
         //async void OnClubOpen(object sender, ItemTappedEventArgs e)

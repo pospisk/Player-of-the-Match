@@ -19,7 +19,7 @@ namespace PlayeroftheGame
             //  //  BarBackgroundColor = Color.IndianRed,
             //  //  BarTextColor = Color.Blue
             //};
-		    MainPage = new MatchesPage();
+		    MainPage = new ClubPage();
 		    FlowListView.Init();
         }
 

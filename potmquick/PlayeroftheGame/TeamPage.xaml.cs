@@ -20,16 +20,16 @@ namespace PlayeroftheGame
 		}
 
 
-	    public async void GetTeam()
-	    {
-	        HttpClient client = new HttpClient();
+	    //public async void GetTeam()
+	    //{
+	    //    HttpClient client = new HttpClient();
 
-	        var response = await client.GetStringAsync("http://api.potg-dev.org/umbraco/Api/Clubs/GetClubs?id=1071");
+	    //    var response = await client.GetStringAsync("http://api.potg-dev.org/umbraco/Api/Club/GetClubs?id=1071");
 
-	        var teams = JsonConvert.DeserializeObject<List<Team>>(response);
+	    //    var teams = JsonConvert.DeserializeObject<List<Team>>(response);
 
-	        teamListView.FlowItemsSource = teams;
-	    }
+	    //    teamListView.FlowItemsSource = teams;
+	    //}
 
 	    //async void OnTeamOpen(object sender, ItemTappedEventArgs e)
 	    //{
