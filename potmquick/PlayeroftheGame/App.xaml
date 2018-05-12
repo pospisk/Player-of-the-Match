@@ -6,13 +6,29 @@
     <Application.Resources>
         <!--  Application resource dictionary  -->
         <ResourceDictionary>
-            
+
             <!--Styles-->
             <Color x:Key="MainRedColor">#f6554d</Color>
             <Color x:Key="DarkBgColor">#20222b</Color>
             <Color x:Key="LightBgColor">#4a4d56</Color>
             <Color x:Key="LinkGrayColor">#7b8792</Color>
             <Color x:Key="LightTextColor">#ffffff</Color>
+
+            <Color x:Key="ListTextColor">#9dacb8</Color>
+            <Color x:Key="ListSubTextColor">#cccccc</Color>
+            <Color x:Key="ListSeparator">#4d545a</Color>
+
+
+            <Color x:Key="InactiveColor">#818389</Color>
+            <Color x:Key="ActiveColor">#ffffff</Color>
+
+            <Color x:Key="TabBGColor">#4a4d56</Color>
+            <Color x:Key="ListBGColor">#1b1c1f</Color>
+            <Color x:Key="AppBGColor">#20222b</Color>
+            <Color x:Key="SearchBGColor">#4c4e57</Color>
+            <Color x:Key="NavBarBGColor">#17191f</Color>
+
+
             <Style x:Key="EntryDefault" TargetType="Entry">
                 <Setter Property="TextColor" Value="{StaticResource MainRedColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource LightBgColor}" />
@@ -22,7 +38,7 @@
 
             <!--Templates-->
             <ControlTemplate x:Key="mainLayout">
-                <StackLayout  
+                <StackLayout
                     BackgroundColor="{StaticResource DarkBgColor}"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand">
@@ -41,20 +57,20 @@
                         Grid.Row="0"
                         Grid.Column="0"
                         BackgroundColor="{StaticResource LightBgColor}">
-                            <Label 
+                            <Label
                             FontSize="Large"
                             HorizontalOptions="Center"
                             Text="Heading"
                             TextColor="{StaticResource MainRedColor}"/>
                         </Frame>
-                        <ScrollView 
+                        <ScrollView
                             Grid.Row="1"
                             Grid.Column="0">
                             <ContentPresenter>
 
                             </ContentPresenter>
                         </ScrollView>
-                        <Frame 
+                        <Frame
                         Grid.Row="2"
                         Grid.Column="0"
                         BackgroundColor="{StaticResource LightBgColor}">

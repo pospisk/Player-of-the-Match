@@ -6,13 +6,19 @@
              xmlns:local="using:PlayeroftheGame"
              >
 
-    <ListView x:Name="MatchesListView">
+    <ListView x:Name="MatchesListView" BackgroundColor="{StaticResource ListBGColor}" SeparatorVisibility="Default" SeparatorColor="{StaticResource ListSeparator}" RowHeight="80">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout Orientation="Horizontal">
-                        <!--<Label Text="{Binding Name}"/>
-                        <Label Text="{Binding MatchDate}"></Label>-->
+                    <StackLayout  Orientation="Horizontal"  HorizontalOptions="Center" VerticalOptions="Center">
+                        <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label TextColor="{StaticResource LightTextColor}" Text="{Binding Id}"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                            <Label  FontSize="16" TextColor="{StaticResource ListTextColor}" Text="{Binding Name}"/>
+                            <Label  FontSize="14" TextColor="{StaticResource ListSubTextColor}" Text="{Binding MatchDate}"></Label>
+                        </StackLayout>
+                        <Button HorizontalOptions="EndAndExpand" Text="arrow" TextColor="{StaticResource LightTextColor}"></Button>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
