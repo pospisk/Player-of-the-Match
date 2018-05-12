@@ -12,6 +12,11 @@ namespace PlayeroftheGame
 		public MainPage()
 		{
 			InitializeComponent();
-		}
-	}
+
+            
+            btnMatches.Clicked += (s, e) => Navigation.PushAsync(new MatchesPage());
+
+        }
+
+    }
 }

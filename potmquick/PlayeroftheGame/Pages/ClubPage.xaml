@@ -6,13 +6,13 @@
              ControlTemplate="{DynamicResource mainLayout}"
              xmlns:local="using:PlayeroftheGame">
 
-    <!--<ListView x:Name="testListView">
+    <ListView x:Name="testListView">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding Id}" Detail="{Binding Description}" />
             </DataTemplate>
         </ListView.ItemTemplate>
-    </ListView>-->
+    </ListView>
 
 
 

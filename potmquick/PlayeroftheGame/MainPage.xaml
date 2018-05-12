@@ -8,6 +8,34 @@
     
     <StackLayout VerticalOptions="CenterAndExpand">
         <Label Text="Welcome to the app!" HorizontalOptions="Center" />
+        <Grid
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button 
+                                    x:Name="btnMatches" 
+                                    Text="Matches" 
+                                    Grid.Row="0"
+                                    Grid.Column="0"/>
+            <Button 
+                                    x:Name="btnMap" 
+                                    Text="Map"
+                                    Grid.Row="0"
+                                    Grid.Column="1"/>
+            <Button 
+                                    x:Name="btnLogin" 
+                                    Text="Login"
+                                    Grid.Row="0"
+                                    Grid.Column="2"/>
+        </Grid>
     </StackLayout>
+    
     
 </ContentPage>    
