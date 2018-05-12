@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlayeroftheGame.TeamPage"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             ControlTemplate="{DynamicResource mainLayout}"
+             >
+
+    <flv:FlowListView FlowColumnCount="2" SeparatorVisibility="Default" HasUnevenRows="True"
+                      FlowItemTappedCommand="{Binding ItemTappedCommand}"
+                      FlowItemsSource="{Binding Items}" x:Name="teamListView">
+
+        <flv:FlowListView.FlowColumnTemplate>
+            <DataTemplate>
+
+                <Grid Padding="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="{Binding Id}" Grid.Row="0"/>
+                    <Label Text="{Binding Name}" Grid.Row="1"/>
+                </Grid>
+
+            </DataTemplate>
+        </flv:FlowListView.FlowColumnTemplate>
+
+    </flv:FlowListView>
+
+</ContentPage>

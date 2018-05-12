@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using DLToolkit.Forms.Controls;
 using Xamarin.Forms;
 
 namespace PlayeroftheGame
@@ -19,7 +19,8 @@ namespace PlayeroftheGame
             //  //  BarBackgroundColor = Color.IndianRed,
             //  //  BarTextColor = Color.Blue
             //};
-            MainPage = new LoginPage();
+		    MainPage = new ClubPage();
+		    FlowListView.Init();
         }
 
         protected override void OnStart ()
