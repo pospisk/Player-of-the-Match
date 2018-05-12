@@ -30,7 +30,7 @@ namespace PlayeroftheGame
 
             var clubs = JsonConvert.DeserializeObject<List<Club>>(response);
 
-            testListView.FlowItemsSource = clubs;
+           // testListView.FlowItemsSource = clubs;
         }
 
         //async void OnClubOpen(object sender, ItemTappedEventArgs e)

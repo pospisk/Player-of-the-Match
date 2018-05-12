@@ -17,8 +17,8 @@
 
 
 
-        <flv:FlowListView FlowColumnCount="2" SeparatorVisibility="Default" HasUnevenRows="True"
-                      FlowItemTapped="OnClubOpen"
+        <!--<flv:FlowListView FlowColumnCount="2" SeparatorVisibility="Default" HasUnevenRows="True"
+                      FlowItemTapped="{Binding SOme}"
                       FlowItemsSource="{Binding Items}" x:Name="testListView">
 
             <flv:FlowListView.FlowColumnTemplate>
@@ -40,6 +40,6 @@
                  </DataTemplate>
             </flv:FlowListView.FlowColumnTemplate>
 
-        </flv:FlowListView>
+        </flv:FlowListView>-->
 
 </ContentPage>

@@ -3,15 +3,15 @@
     x:Class="PlayeroftheGame.LoginPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    
-    xmlns:viewModels1="clr-namespace:PlayeroftheGame.ViewModels">
+    ControlTemplate="{DynamicResource mainLayout}"
+    xmlns:viewModels="clr-namespace:PlayeroftheGame.ViewModels">
 
     <ContentPage.BindingContext>
-        <viewModels1:LoginViewModel/>
+        <viewModels:LoginViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        
-        
+
+
         <ScrollView>
             <StackLayout BackgroundColor="{StaticResource DarkBgColor}">
                 <StackLayout HorizontalOptions="Center" VerticalOptions="StartAndExpand">
@@ -28,9 +28,9 @@
                         Text="Login"
                         TextColor="{StaticResource MainRedColor}" />
 
-                    <Entry 
-                        Placeholder="Username" 
-                        Text="{Binding UsErNaMe}" 
+                    <Entry
+                        Placeholder="Username"
+                        Text="{Binding UsErNaMe}"
                         Style="{StaticResource EntryDefault}" />
                     <Entry
                         IsPassword="true"
