@@ -2,28 +2,119 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlayeroftheGame.MatchesPage"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              ControlTemplate="{DynamicResource mainLayout}"
              xmlns:local="using:PlayeroftheGame"
              NavigationPage.HasNavigationBar="False"
              >
 
-    <ListView x:Name="MatchesListView" BackgroundColor="{StaticResource ListBGColor}" SeparatorVisibility="Default" SeparatorColor="{StaticResource ListSeparator}" RowHeight="80">
+
+
+    <StackLayout Orientation="Vertical">
+        <StackLayout HorizontalOptions="Fill" Padding="0">
+            <Frame
+            Margin="50,0"
+                Padding="0"
+            HorizontalOptions="Fill"
+            CornerRadius="5"
+            BackgroundColor="{StaticResource SearchBGColor}"
+                >
+                <Entry
+                HorizontalOptions="Center"
+                IsPassword="true"
+                Text=""
+                Placeholder="Search clubs, id and teams"
+                PlaceholderColor="{StaticResource LinkGrayColor}"
+                TextColor="{StaticResource MainRedColor}"
+                BackgroundColor="{StaticResource SearchBGColor}"/>
+            </Frame>
+        </StackLayout>
+
+        <ListView x:Name="MatchesListView"
+                  ItemSelected="ListClicked"
+              HasUnevenRows="false"
+              BackgroundColor="{StaticResource ListBGColor}"
+              SeparatorVisibility="Default"
+              SeparatorColor="{StaticResource ListSeparator}"
+              RowHeight="80"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <StackLayout Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <skia:SKCanvasView x:Name="canvasView" PaintSurface="OnPaintSample">
+
+                                </skia:SKCanvasView>
+                            </StackLayout>
+                            <StackLayout
+                            Grid.Column="1"
+                            Orientation="Vertical"
+                            VerticalOptions="Center">
+                                <Label  FontSize="13" TextColor="{StaticResource ListTextColor}" Text="{Binding Name}"/>
+                                <Label  FontSize="10" TextColor="{StaticResource ListSubTextColor}" Text="{Binding MatchDate}"/>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center">
+                                <Button x:Name="MyButton" BackgroundColor="Transparent">
+                                    <Button.Image>
+                                        <OnPlatform x:TypeArguments="FileImageSource"
+                                                iOS="arrow"
+                                                Android="arrow_25.png"
+                                                WinPhone="assets/arrow_25.png" />
+                                    </Button.Image>
+                                </Button>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+
+
+    <!--<ListView x:Name="MatchesListView"
+              BackgroundColor="{StaticResource ListBGColor}"
+              SeparatorVisibility="Default"
+              SeparatorColor="{StaticResource ListSeparator}"
+              RowHeight="80">
+
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout  Orientation="Horizontal"  HorizontalOptions="Center" VerticalOptions="Center">
-                        <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
-                            <Label TextColor="{StaticResource LightTextColor}" Text="{Binding Id}"/>
+                    <StackLayout
+                        Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                        <StackLayout
+                            VerticalOptions="Center">
+                            <skia:SKCanvasView x:Name="canvasView" PaintSurface="OnPaintSample">
+                            </skia:SKCanvasView>
                         </StackLayout>
-                        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                        <StackLayout
+                            Orientation="Vertical"
+                            VerticalOptions="Center">
                             <Label  FontSize="16" TextColor="{StaticResource ListTextColor}" Text="{Binding Name}"/>
-                            <Label  FontSize="14" TextColor="{StaticResource ListSubTextColor}" Text="{Binding MatchDate}"></Label>
+                            <Label  FontSize="14" TextColor="{StaticResource ListSubTextColor}" Text="{Binding MatchDate}"/>
                         </StackLayout>
-                        <Button HorizontalOptions="EndAndExpand" Text="arrow" TextColor="{StaticResource LightTextColor}"></Button>
+                        <Button
+                            HorizontalOptions="End"
+                            Text="arrow"
+                            TextColor="{StaticResource LightTextColor}"/>
+
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
-    </ListView>
+    </ListView>-->
 
 </ContentPage>
