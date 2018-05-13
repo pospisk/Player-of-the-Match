@@ -1,32 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using PlayeroftheGame.Models;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace PlayeroftheGame
 {
 	public partial class MainPage : ContentPage
 	{
-        public static readonly BindableProperty HeaderTextProperty = BindableProperty.Create( nameof(HeaderText), typeof(string), typeof(MainPage), "Matches", defaultBindingMode: BindingMode.OneWay);
-        
-
+       
         public MainPage()
 		{
 			InitializeComponent();
-            
+
+
+            Models.Page currentPage = new Models.Page
+            {
+                HeaderText = "Heading"
+            };
+
+            BindingContext = currentPage;
+
         }
 
         protected override void OnAppearing()
         {
+            GetMatches();
+
+            
 
         }
 
-        public string HeaderText
+        public async void GetMatches()
         {
-            get { return (string)GetValue(HeaderTextProperty); }
-            set { SetValue(HeaderTextProperty, value); }
+            HttpClient client = new HttpClient();
+
+            var response = await client.GetStringAsync("http://www.api.potg-dev.org/umbraco/api/match/getmatches?parentid=1071");
+
+            var matches = JsonConvert.DeserializeObject<List<Match>>(response);
+
+            MatchesListView.ItemsSource = matches;
         }
 
     }

@@ -13,25 +13,19 @@ namespace PlayeroftheGame
 	{
         //private Xamarin.Forms.Button bthMatches;
 
-        
-        
+            public string HeaderText = "hello";
+
+
 
         public App ()
 		{
 			InitializeComponent();
 
-            //this.BindingContext = this.MainPage.BindingContext;
-
-            //MainPage = new NavigationPage(new LoginPage())
-            //{
-
-            //  //  BarBackgroundColor = Color.IndianRed,
-            //  //  BarTextColor = Color.Blue
-            //};
+            
 		    MainPage = new NavigationPage(new PlayeroftheGame.MainPage());
 
-            //btnMatches.Clicked += (s, e) => Navigation.PushAsync(new MatchesPage());
 
+            BindingContext = HeaderText;
 
 
             FlowListView.Init();

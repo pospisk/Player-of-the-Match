@@ -2,6 +2,7 @@
 <Application
     x:Class="PlayeroftheGame.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
+    BindingContext="currentPage"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
         <!--  Application resource dictionary  -->
@@ -70,7 +71,7 @@
                                 <Label
                                     FontSize="Large"
                                     HorizontalOptions="Center"
-                                    Text="{TemplateBinding Parent.HeaderText}"
+                                    Text="{TemplateBinding}"
                                     TextColor="{StaticResource MainRedColor}"/>
                                 <Button x:Name="Back" Clicked="BtnBack" Text="Back"></Button>
                             </Grid>
@@ -78,7 +79,7 @@
                         <ScrollView
                             Grid.Row="1"
                             Grid.Column="0">
-                            <ContentPresenter>
+                            <ContentPresenter Content="{TemplateBinding Content}">
 
                             </ContentPresenter>
                         </ScrollView>

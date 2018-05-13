@@ -5,21 +5,45 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PlayeroftheGame"
     ControlTemplate="{StaticResource mainLayout}"
- 
-    HeaderText="{Binding HeaderText}">
+    >
 
+    <!--HeaderText="{Binding HeaderText}"-->
+    
     <!--x:Name="This"-->
 
     <!--<ContentPage.BindingContext>
         <x:Reference Name="This" />
     </ContentPage.BindingContext>-->
+
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="{Binding HeaderText}" HorizontalOptions="Center"/>
+
+            <ListView x:Name="MatchesListView" BackgroundColor="{StaticResource ListBGColor}" SeparatorVisibility="Default" SeparatorColor="{StaticResource ListSeparator}" RowHeight="80">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout  Orientation="Horizontal"  HorizontalOptions="Center" VerticalOptions="Center">
+                                <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                    <Label TextColor="{StaticResource LightTextColor}" Text="{Binding Id}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                                    <Label  FontSize="16" TextColor="{StaticResource ListTextColor}" Text="{Binding Name}"/>
+                                    <Label  FontSize="14" TextColor="{StaticResource ListSubTextColor}" Text="{Binding MatchDate}"></Label>
+                                </StackLayout>
+                                <Button HorizontalOptions="EndAndExpand" Text="arrow" TextColor="{StaticResource LightTextColor}"></Button>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.Content>
+        <Label></Label>
+    </ContentPage.Content>
     
-    
-    
-    <StackLayout VerticalOptions="CenterAndExpand">
-        <Label Text="{Binding HeaderText}, Source={x:Reference MainPage}" HorizontalOptions="Center"/>
-        
-    </StackLayout>
-    
-    
+
+
 </ContentPage>    
