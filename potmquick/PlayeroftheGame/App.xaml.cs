@@ -56,7 +56,7 @@ namespace PlayeroftheGame
         public async void BtnMatches(object sender, EventArgs e)
         {
             string page = Application.Current.MainPage.Navigation.NavigationStack.Last().ToString();
-            if (page != "PlayeroftheGame.pages.MatchesPage")
+            if (page != "PlayeroftheGame.MatchesPage")
             {
                 await ((NavigationPage)Application.Current.MainPage).PushAsync(new MatchesPage());
             }
@@ -66,7 +66,7 @@ namespace PlayeroftheGame
         public async void BtnLogin(object sender, EventArgs e)
         {
             string page = Application.Current.MainPage.Navigation.NavigationStack.Last().ToString();
-            if (page != "PlayeroftheGame.pages.LoginPage")
+            if (page != "PlayeroftheGame.LoginPage")
             {
                 await((NavigationPage)Application.Current.MainPage).PushAsync(new LoginPage());
             }

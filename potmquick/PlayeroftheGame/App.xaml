@@ -36,6 +36,12 @@
                 <Setter Property="WidthRequest" Value="300" />
             </Style>
 
+            <Style x:Key="FrameNoBorder" TargetType="Frame">
+                <Setter Property="OutlineColor" Value="Transparent"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+            </Style>
+
+
             <!--Templates-->
             <ControlTemplate x:Key="mainLayout">
                 <StackLayout
@@ -64,8 +70,8 @@
                             Grid.Row="1"
                             Grid.Column="0"
                             BackgroundColor="{StaticResource LightBgColor}"
-                            OutlineColor="Transparent"
-                            BorderColor="Transparent">
+                            Style="{StaticResource FrameNoBorder}"
+                            >
                             <Grid
                                 HorizontalOptions="FillAndExpand"
                                 VerticalOptions="FillAndExpand">
