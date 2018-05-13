@@ -6,7 +6,6 @@
              ControlTemplate="{DynamicResource mainLayout}"
              xmlns:local="using:PlayeroftheGame"
              NavigationPage.HasNavigationBar="True"
-
              Title="Find Matches"
              >
 
