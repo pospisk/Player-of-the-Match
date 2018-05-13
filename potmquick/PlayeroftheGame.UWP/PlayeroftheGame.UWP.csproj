@@ -107,6 +107,9 @@
   <ItemGroup>
     <Content Include="Assets\arrow_25.png" />
     <Content Include="Assets\arrow_50.png" />
+    <Content Include="Assets\Feed.png" />
+    <Content Include="Assets\Map.png" />
+    <Content Include="Assets\User.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />

@@ -47,12 +47,12 @@
                         VerticalOptions="FillAndExpand">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
-                            <RowDefinition Height="70" />
+                            <RowDefinition Height="55" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        
+
                         <ScrollView
                             Grid.Row="0"
                             Grid.Column="0">
@@ -77,26 +77,46 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Button 
+                                <Button
                                     Clicked="BtnMatches"
-                                    Text="Matches" 
-                                    Margin="0"
+                                    BackgroundColor="Transparent"
                                     Grid.Row="0"
-                                    Grid.Column="0"/>
-                                <Button 
-                                    x:Name="btnMap" 
-                                    Text="Map"
-                                    Margin="0"
+                                    Grid.Column="0">
+                                    <Button.Image>
+                                        <OnPlatform x:TypeArguments="FileImageSource"
+                                                    iOS="Feed"
+                                                    Android="Feed.png"
+                                                    WinPhone="assets/Feed.png" />
+                                    </Button.Image>
+                                </Button>
+
+                                <Button
+                                    x:Name="btnMap"
+                                    BackgroundColor="Transparent"
                                     Grid.Row="0"
-                                    Grid.Column="1"/>
-                                <Button 
-                                    Clicked="BtnLogin" 
-                                    Text="Login"
-                                    Margin="0"
+                                    Grid.Column="1">
+                                    <Button.Image>
+                                        <OnPlatform x:TypeArguments="FileImageSource"
+                                                    iOS="Map"
+                                                    Android="Map.png"
+                                                    WinPhone="assets/Map.png" />
+                                    </Button.Image>
+                                </Button>
+
+                                <Button
+                                    Clicked="BtnLogin"
+                                    BackgroundColor="Transparent"
                                     Grid.Row="0"
-                                    Grid.Column="2"/>
+                                    Grid.Column="2">
+                                    <Button.Image>
+                                        <OnPlatform x:TypeArguments="FileImageSource"
+                                                    iOS="User"
+                                                    Android="User.png"
+                                                    WinPhone="assets/User.png" />
+                                    </Button.Image>
+                                </Button>
                             </Grid>
-                            
+
                         </Frame>
                     </Grid>
                 </StackLayout>
