@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlayeroftheGame.Pages.VotePlayersPage"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             ControlTemplate="{DynamicResource mainLayout}"
+             xmlns:local="using:PlayeroftheGame"
+             NavigationPage.HasNavigationBar="True"
+
+             Title="Vote for player"
+             >
+
+    <StackLayout Orientation="Vertical">
+        <StackLayout>
+            <Label Text="Vote for the best player of the match" FontSize="15"></Label>
+        </StackLayout>
+
+        <ListView
+              x:Name="PlayersListView"
+              HasUnevenRows="false"
+              SeparatorVisibility="Default"
+              SeparatorColor="{StaticResource ListSeparator}"
+              RowHeight="80"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid BackgroundColor="{StaticResource ListBGColor}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
+</ContentPage>

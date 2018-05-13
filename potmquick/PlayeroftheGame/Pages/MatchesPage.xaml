@@ -10,8 +10,6 @@
              Title="Find Matches"
              >
 
-
-
     <StackLayout Orientation="Vertical">
         <StackLayout HorizontalOptions="Fill" Padding="0">
             <Frame
