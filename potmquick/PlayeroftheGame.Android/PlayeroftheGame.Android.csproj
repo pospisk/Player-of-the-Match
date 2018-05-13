@@ -121,10 +121,10 @@
     <AndroidResource Include="Resources\drawable\Feed.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\player-dot.png" />
+    <AndroidResource Include="Resources\drawable\playerDot.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\arrow-up.png" />
+    <AndroidResource Include="Resources\drawable\arrowUp.png" />
   </ItemGroup>
   <Import Project="..\PlayeroftheGame\PlayeroftheGame.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
