@@ -57,11 +57,23 @@
                         Grid.Row="0"
                         Grid.Column="0"
                         BackgroundColor="{StaticResource LightBgColor}">
-                            <Label
-                            FontSize="Large"
-                            HorizontalOptions="Center"
-                            Text="Heading"
-                            TextColor="{StaticResource MainRedColor}"/>
+                            <Grid
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    FontSize="Large"
+                                    HorizontalOptions="Center"
+                                    Text="{TemplateBinding Parent.HeaderText}"
+                                    TextColor="{StaticResource MainRedColor}"/>
+                                <Button x:Name="Back" Clicked="BtnBack" Text="Back"></Button>
+                            </Grid>
                         </Frame>
                         <ScrollView
                             Grid.Row="1"
@@ -86,18 +98,21 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <Button 
-                                    x:Name="btnMatches" 
+                                    Clicked="BtnMatches"
                                     Text="Matches" 
+                                    Margin="0"
                                     Grid.Row="0"
                                     Grid.Column="0"/>
                                 <Button 
                                     x:Name="btnMap" 
                                     Text="Map"
+                                    Margin="0"
                                     Grid.Row="0"
                                     Grid.Column="1"/>
                                 <Button 
-                                    x:Name="btnLogin" 
+                                    Clicked="BtnLogin" 
                                     Text="Login"
+                                    Margin="0"
                                     Grid.Row="0"
                                     Grid.Column="2"/>
                             </Grid>

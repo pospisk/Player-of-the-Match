@@ -4,6 +4,7 @@
              x:Class="PlayeroftheGame.MatchesPage"
              ControlTemplate="{DynamicResource mainLayout}"
              xmlns:local="using:PlayeroftheGame"
+             NavigationPage.HasNavigationBar="False"
              >
 
     <ListView x:Name="MatchesListView" BackgroundColor="{StaticResource ListBGColor}" SeparatorVisibility="Default" SeparatorColor="{StaticResource ListSeparator}" RowHeight="80">

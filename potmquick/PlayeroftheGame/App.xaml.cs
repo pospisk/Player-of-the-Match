@@ -11,11 +11,16 @@ namespace PlayeroftheGame
 {
 	public partial class App : Application
 	{
-        private Xamarin.Forms.Button bthMatches;
+        //private Xamarin.Forms.Button bthMatches;
 
-		public App ()
+        
+        
+
+        public App ()
 		{
 			InitializeComponent();
+
+            //this.BindingContext = this.MainPage.BindingContext;
 
             //MainPage = new NavigationPage(new LoginPage())
             //{
@@ -25,7 +30,9 @@ namespace PlayeroftheGame
             //};
 		    MainPage = new NavigationPage(new PlayeroftheGame.MainPage());
 
-            
+            //btnMatches.Clicked += (s, e) => Navigation.PushAsync(new MatchesPage());
+
+
 
             FlowListView.Init();
 
@@ -45,5 +52,30 @@ namespace PlayeroftheGame
 		{
 			// Handle when your app resumes
 		}
-	}
+
+        public async void BtnMatches(object sender, EventArgs e)
+        {
+            string page = Application.Current.MainPage.Navigation.NavigationStack.Last().ToString();
+            if (page != "PlayeroftheGame.pages.MatchesPage")
+            {
+                await ((NavigationPage)Application.Current.MainPage).PushAsync(new MatchesPage());
+            }
+            
+        }
+
+        public async void BtnLogin(object sender, EventArgs e)
+        {
+            string page = Application.Current.MainPage.Navigation.NavigationStack.Last().ToString();
+            if (page != "PlayeroftheGame.pages.LoginPage")
+            {
+                await((NavigationPage)Application.Current.MainPage).PushAsync(new LoginPage());
+            }
+
+        }
+
+        private async void BtnBack(object sender, EventArgs e)
+        {
+            await ((NavigationPage)Application.Current.MainPage).PopAsync();
+        }
+    }
 }

@@ -9,13 +9,24 @@ namespace PlayeroftheGame
 {
 	public partial class MainPage : ContentPage
 	{
-		public MainPage()
+        public static readonly BindableProperty HeaderTextProperty = BindableProperty.Create( nameof(HeaderText), typeof(string), typeof(MainPage), "Matches", defaultBindingMode: BindingMode.OneWay);
+        
+
+        public MainPage()
 		{
 			InitializeComponent();
-
             
-            btnMatches.Clicked += (s, e) => Navigation.PushAsync(new MatchesPage());
+        }
 
+        protected override void OnAppearing()
+        {
+
+        }
+
+        public string HeaderText
+        {
+            get { return (string)GetValue(HeaderTextProperty); }
+            set { SetValue(HeaderTextProperty, value); }
         }
 
     }
