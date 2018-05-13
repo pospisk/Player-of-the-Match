@@ -60,16 +60,16 @@ namespace PlayeroftheGame
 	        MatchesListView.ItemsSource = matches;
 	    }
 
-	    public async void GetMatch(int Id)
-	    {
-	        HttpClient client = new HttpClient();
+	    //public async void GetMatch(int Id)
+	    //{
+	    //    HttpClient client = new HttpClient();
 
-	        var response = await client.GetStringAsync("http://www.api.potg-dev.org/umbraco/api/match/getmatches?parentid=" + Id);
+	    //    var response = await client.GetStringAsync("http://www.api.potg-dev.org/umbraco/api/match/getmatches?parentid=" + Id);
 
-	        var match = JsonConvert.DeserializeObject<List<Match>>(response);
+	    //    var match = JsonConvert.DeserializeObject<List<Match>>(response);
 
-	        //MatchListView.ItemsSource = match;
-	    }
+	    //    //MatchListView.ItemsSource = match;
+	    //}
 
 
 
