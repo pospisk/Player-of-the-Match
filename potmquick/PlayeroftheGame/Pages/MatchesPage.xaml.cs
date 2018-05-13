@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using PlayeroftheGame.Models;
+using PlayeroftheGame.Pages;
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
@@ -32,6 +33,7 @@ namespace PlayeroftheGame
 		{
 			InitializeComponent ();
             GetMatches();
+	
 
         }
 
@@ -75,14 +77,19 @@ namespace PlayeroftheGame
 
 
 
-        public void ListClicked(object sender, SelectedItemChangedEventArgs e)
+        public async void ListClicked(object sender, SelectedItemChangedEventArgs e)
 	    {
 	        if (e.SelectedItem == null) return; // don't do anything if we just de-selected the row
 
-	            var poopynumber = (e.SelectedItem as Match).Id ;
+	        int matchId = (e.SelectedItem as Match).Id ;
+
+            //string page = Application.Current.MainPage.Navigation.NavigationStack.Last().ToString();
+            //if (page != "PlayeroftheGame.MatchesPage")
+
+	        await((NavigationPage)Application.Current.MainPage).PushAsync(new MatchPage(matchId));
 
 
-            ((ListView)sender).SelectedItem = null; // de-select the row
+	        //((ListView)sender).SelectedItem = null; // de-select the row
 
         }
 	}

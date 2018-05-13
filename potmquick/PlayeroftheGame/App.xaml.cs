@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DLToolkit.Forms.Controls;
+using PlayeroftheGame.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,8 +14,8 @@ namespace PlayeroftheGame
 	{
         //private Xamarin.Forms.Button bthMatches;
 
-        
-        
+
+
 
         public App ()
 		{
@@ -22,17 +23,17 @@ namespace PlayeroftheGame
 
             //this.BindingContext = this.MainPage.BindingContext;
 
-            //MainPage = new NavigationPage(new LoginPage())
             //{
 
             //  //  BarBackgroundColor = Color.IndianRed,
             //  //  BarTextColor = Color.Blue
             //};
-		    MainPage = new NavigationPage(new PlayeroftheGame.MatchesPage());
 
-            //btnMatches.Clicked += (s, e) => Navigation.PushAsync(new MatchesPage());
-
-
+		    MainPage = new NavigationPage(new PlayeroftheGame.MatchesPage())
+		    {
+		        BarTextColor = Color.FromHex("#f6554d"),
+		        BarBackgroundColor = Color.FromHex("#17191f")
+		    };
 
             FlowListView.Init();
 
@@ -55,12 +56,13 @@ namespace PlayeroftheGame
 
         public async void BtnMatches(object sender, EventArgs e)
         {
+
             string page = Application.Current.MainPage.Navigation.NavigationStack.Last().ToString();
             if (page != "PlayeroftheGame.MatchesPage")
             {
                 await ((NavigationPage)Application.Current.MainPage).PushAsync(new MatchesPage());
             }
-            
+
         }
 
         public async void BtnLogin(object sender, EventArgs e)

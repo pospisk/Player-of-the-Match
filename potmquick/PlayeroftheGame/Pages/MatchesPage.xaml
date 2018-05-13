@@ -5,7 +5,9 @@
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              ControlTemplate="{DynamicResource mainLayout}"
              xmlns:local="using:PlayeroftheGame"
-             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasNavigationBar="True"
+
+             Title="Find Matches"
              >
 
 
@@ -14,7 +16,7 @@
         <StackLayout HorizontalOptions="Fill" Padding="0">
             <Frame
                 Margin="30, 20, 30, 10"
-                Padding="0"
+                Padding="1"
                 HorizontalOptions="Fill"
                 CornerRadius="3"
                 BackgroundColor="{StaticResource SearchBGColor}"
@@ -27,8 +29,9 @@
             </Frame>
         </StackLayout>
 
-        <ListView x:Name="MatchesListView"
-                  ItemSelected="ListClicked"
+        <ListView
+              x:Name="MatchesListView"
+              ItemSelected="ListClicked"
               HasUnevenRows="false"
               SeparatorVisibility="Default"
               SeparatorColor="{StaticResource ListSeparator}"

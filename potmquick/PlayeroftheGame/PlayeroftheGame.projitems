@@ -35,6 +35,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Club.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Match.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Team.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MatchPage.xaml.cs">
+      <DependentUpon>MatchPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Services\ApiServices.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\TeamPage.xaml.cs">
       <DependentUpon>TeamPage.xaml</DependentUpon>
@@ -67,6 +71,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\MatchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
