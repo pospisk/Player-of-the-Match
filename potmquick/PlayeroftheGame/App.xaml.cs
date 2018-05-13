@@ -28,7 +28,7 @@ namespace PlayeroftheGame
             //  //  BarBackgroundColor = Color.IndianRed,
             //  //  BarTextColor = Color.Blue
             //};
-		    MainPage = new NavigationPage(new PlayeroftheGame.MainPage());
+		    MainPage = new NavigationPage(new PlayeroftheGame.MatchesPage());
 
             //btnMatches.Clicked += (s, e) => Navigation.PushAsync(new MatchesPage());
 

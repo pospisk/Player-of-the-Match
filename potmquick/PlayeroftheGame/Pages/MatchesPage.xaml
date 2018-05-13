@@ -21,19 +21,15 @@
                 >
                 <Entry
                 HorizontalOptions="Center"
-                IsPassword="true"
                 Text=""
                 Placeholder="Search clubs, id and teams"
-                PlaceholderColor="{StaticResource LinkGrayColor}"
-                TextColor="{StaticResource MainRedColor}"
-                BackgroundColor="{StaticResource SearchBGColor}"/>
+                Style="{StaticResource EntryDefault}"></Entry>
             </Frame>
         </StackLayout>
 
         <ListView x:Name="MatchesListView"
                   ItemSelected="ListClicked"
               HasUnevenRows="false"
-              BackgroundColor="{StaticResource ListBGColor}"
               SeparatorVisibility="Default"
               SeparatorColor="{StaticResource ListSeparator}"
               RowHeight="80"
@@ -41,7 +37,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid>
+                        <Grid BackgroundColor="{StaticResource ListBGColor}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"/>
                                 <ColumnDefinition Width="*"/>

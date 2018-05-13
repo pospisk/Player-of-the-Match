@@ -46,46 +46,26 @@
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="70" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="70" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                            <Frame
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        BackgroundColor="{StaticResource LightBgColor}">
-                            <Grid
-                                HorizontalOptions="FillAndExpand"
-                                VerticalOptions="FillAndExpand">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <Label
-                                    FontSize="Large"
-                                    HorizontalOptions="Center"
-                                    Text="{TemplateBinding Parent.HeaderText}"
-                                    TextColor="{StaticResource MainRedColor}"/>
-                                <Button x:Name="Back" Clicked="BtnBack" Text="Back"></Button>
-                            </Grid>
-                        </Frame>
+                        
                         <ScrollView
-                            Grid.Row="1"
+                            Grid.Row="0"
                             Grid.Column="0">
                             <ContentPresenter>
 
                             </ContentPresenter>
                         </ScrollView>
                         <Frame
-                        Grid.Row="2"
-                        Grid.Column="0"
-                        BackgroundColor="{StaticResource LightBgColor}">
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            BackgroundColor="{StaticResource LightBgColor}"
+                            OutlineColor="Transparent"
+                            BorderColor="Transparent">
                             <Grid
                                 HorizontalOptions="FillAndExpand"
                                 VerticalOptions="FillAndExpand">
