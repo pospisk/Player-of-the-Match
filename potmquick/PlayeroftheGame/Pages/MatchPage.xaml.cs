@@ -15,29 +15,70 @@ namespace PlayeroftheGame.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MatchPage : ContentPage
 	{
-	    private static string apiPath = "http://api.potg-dev.org/umbraco/Api/Match/GetMatch?matchId=";
-
+	    private static string apiPath = "http://api.potg-dev.org/umbraco/api/";
+        private static HttpClient client;
+        private string apiEndpoint = "";
+        private int matchId;
+        public Match match;
+        public Club club;
 
         public MatchPage (int matchId)
 		{
-			InitializeComponent ();
-            GetMatch(matchId);
-		}
+            this.matchId = matchId;
+            //this.match = new Match();
+            //this.club = new Club();
 
-	    public async void GetMatch(int matchId)
+            client = new HttpClient();
+
+
+            InitializeComponent();
+
+            startupMatchPage();
+
+            BindingContext = match;
+
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            
+
+        }
+
+        public async void startupMatchPage()
+        {
+            await GetMatch(matchId);
+
+            await GetClub(match.ClubId);
+
+        }
+
+        public async Task GetMatch(int matchId)
 	    {
-	        HttpClient client = new HttpClient();
+            apiEndpoint = "Match/GetMatch?matchId=";
+            string url = apiPath + apiEndpoint;
 
-	        var response = await client.GetStringAsync( apiPath + matchId);
+            var response = await client.GetStringAsync( url + matchId);
 
-	        Match match = JsonConvert.DeserializeObject<Match>(response);
-
-	        BindingContext = match;
-
+	        this.match = JsonConvert.DeserializeObject<Match>(response);
+            
 	    }
 
+        public async Task GetClub(int clubId)
+        {
+            apiEndpoint = "Club/GetClub?clubId=";
+            string url = apiPath + apiEndpoint;
 
-	    public async void OnTapped(object sender , EventArgs e)
+            var response = await client.GetStringAsync(url + clubId);
+
+            this.club = JsonConvert.DeserializeObject<Club>(response);
+            
+        }
+
+
+        public async void OnTapped(object sender , EventArgs e)
 	    {
 	        Button btn = (Button)sender;
 	        var matchId = int.Parse(btn.Text.ToString()) ;
@@ -48,22 +89,6 @@ namespace PlayeroftheGame.Pages
 	        await ((NavigationPage)Application.Current.MainPage).PushAsync(new VotePlayersPage(matchId: matchId, teamId: teamId));
 
 	    }
-
-
-        //public async void MatchClubClicked(object sender, SelectedItemChangedEventArgs e)
-        //{
-        //    if (e.SelectedItem == null) return; // don't do anything if we just de-selected the row
-
-        //    int matchId = (e.SelectedItem as Match).Id;
-
-        //    //string page = Application.Current.MainPage.Navigation.NavigationStack.Last().ToString();
-        //    //if (page != "PlayeroftheGame.MatchesPage")
-
-        //    await ((NavigationPage)Application.Current.MainPage).PushAsync(new MatchPage(matchId));
-
-
-        //    //((ListView)sender).SelectedItem = null; // de-select the row
-
-        //}
+        
     }
 }
