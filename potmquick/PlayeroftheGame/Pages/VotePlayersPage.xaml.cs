@@ -15,21 +15,75 @@ namespace PlayeroftheGame.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class VotePlayersPage : ContentPage
 	{
-        private static string apiPath = "http://www.api.potg-dev.org/umbraco/api/Player/getPlayers?parentId=";
+        private static string apiPath = "http://api.potg-dev.org/umbraco/api/";
+        private string apiEndpoint = "";
+        private int matchId;
+        private int teamId;
+        static HttpClient client;
 
         public VotePlayersPage (int matchId, int teamId)
 		{
+            this.matchId = matchId;
+            this.teamId = teamId;
+            client = new HttpClient();
+
 			InitializeComponent ();
 		}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            GetPlayers(teamId);
+        }
+
         public async void GetPlayers(int teamId)
         {
-            HttpClient client = new HttpClient();
+            apiEndpoint = "Player/getPlayers?parentId=";
 
-            var response = await client.GetStringAsync(apiPath + teamId);
+            string response = await client.GetStringAsync(apiPath + teamId);
 
-            var players = JsonConvert.DeserializeObject<List<Player>>(response);
+            List<Player> players = JsonConvert.DeserializeObject<List<Player>>(response);
 
             PlayersListView.ItemsSource = players;
+        }
+
+        protected async Task<HttpResponseMessage> PostVote(int IMEI, int matchId, int playerId, int voteBatchId)
+        {
+            apiEndpoint = "Vote/commitVote";
+            string url = apiPath + apiEndpoint;
+
+            HttpResponseMessage res = null;
+
+            Vote vote = new Vote
+            {
+                IMEI = IMEI,
+                MatchId = matchId,
+                PlayerId = playerId,
+                VoteBatchId = voteBatchId
+            };
+            var jsonRequest = JsonConvert.SerializeObject(vote);
+
+            try
+            {
+                var content = new StringContent(jsonRequest, Encoding.UTF8, "text/json");
+                res = await client.PostAsync(url, content);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return res;
+        }
+
+        public async void VoteForPlayer(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null) return;
+
+            Player selectedPlayer = (e.SelectedItem as Player);
+
+
         }
 
     }
