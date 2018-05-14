@@ -86,11 +86,11 @@ namespace PlayeroftheGame
             //string page = Application.Current.MainPage.Navigation.NavigationStack.Last().ToString();
             //if (page != "PlayeroftheGame.MatchesPage")
 
-	        await((NavigationPage)Application.Current.MainPage).PushAsync(new MatchPage(matchId));
+            await ((NavigationPage)Application.Current.MainPage).PushAsync(new MatchPage(matchId));
 
 
-	        //((ListView)sender).SelectedItem = null; // de-select the row
+            //((ListView)sender).SelectedItem = null; // de-select the row
 
         }
-	}
+    }
 }

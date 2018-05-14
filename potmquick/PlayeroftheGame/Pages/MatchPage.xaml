@@ -36,9 +36,10 @@
                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1, Property=Y, Constant=0}"
                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}"
-                        Text="Work"
+                        Text="{Binding TeamId}"
                         TextColor="Transparent"
                         Clicked="OnTapped"
+                        CommandParameter="{Binding Id}"
                         BackgroundColor="Transparent"/>
                 </RelativeLayout>
             </Frame>
@@ -57,8 +58,8 @@
                         </Frame>
                         <Frame Grid.Row="1" Grid.Column="0" BorderColor="Transparent" Padding="5" BackgroundColor="{StaticResource TabBGColor}">
                             <StackLayout Orientation="Vertical">
-                                <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}" Text="IM da title"/>
-                                <Label FontSize="10" TextColor="{StaticResource ListTextColor}" Text="IM da subtitle"/>
+                                <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}" Text="{Binding TeamId}"/>
+                                <Label FontSize="10" TextColor="{StaticResource ListTextColor}" Text="{Binding ClubId}"/>
                             </StackLayout>
                         </Frame>
                     </Grid>
