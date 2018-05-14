@@ -1,121 +1,74 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlayeroftheGame.Pages.MatchPage"
-             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
-             ControlTemplate="{DynamicResource mainLayout}"
-             xmlns:local="using:PlayeroftheGame"
-             NavigationPage.HasNavigationBar="True"
-
-             Title="{Binding Name}">
-
-    <RelativeLayout>
-
-        <Grid Padding="15"
-        BackgroundColor="{StaticResource AppBGColor}"
-        ColumnSpacing="25"
-        >
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:local="using:PlayeroftheGame" x:Class="PlayeroftheGame.Pages.MatchPage" ControlTemplate="{DynamicResource mainLayout}" NavigationPage.HasNavigationBar="True" Title="{Binding Name}">
+    <StackLayout>
+        <Grid Padding="15" BackgroundColor="{StaticResource AppBGColor}" ColumnSpacing="25">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <Frame CornerRadius="0" Padding="0" BorderColor="Transparent" Grid.Row="0" Grid.Column="0" BackgroundColor="SkyBlue">
+                <RelativeLayout Padding="0" BackgroundColor="{StaticResource TabBGColor}">
+                    <Grid RowSpacing="0" BackgroundColor="{StaticResource TabBGColor}"
+                          HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame CornerRadius="0" Grid.Row="0" Grid.Column="0" BorderColor="Transparent" Padding="0" BackgroundColor="Aquamarine">
+                            <Label Text="Dis is img"/>
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="0" BorderColor="Transparent" Padding="5" BackgroundColor="{StaticResource TabBGColor}">
+                            <StackLayout Orientation="Vertical">
+                                <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}" Text="{Binding Name}"/>
+                                <Label FontSize="10" TextColor="{StaticResource ListTextColor}" Text="{Binding MatchDate}"/>
+                            </StackLayout>
+                        </Frame>
 
-            <Frame
-                CornerRadius="0"
-                Padding="0"
-                BorderColor="Transparent"
-                Grid.Row="0"
-                Grid.Column="0"
-                >
-
-
-    <Grid RowSpacing="0"
-          BackgroundColor="{StaticResource TabBGColor}">
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="140" />
-            <RowDefinition Height="50" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <Frame
-            CornerRadius="0"
-            Grid.Row="0"
-            Grid.Column="0"
-            BorderColor="Transparent"
-            Padding="0"
-            BackgroundColor="Aquamarine"
-        >
-            <Label Text="Dis is img"></Label>
-        </Frame>
-
-        <Frame
-            Grid.Row="1"
-            Grid.Column="0"
-            BorderColor="Transparent"
-            Padding="5"
-            BackgroundColor="{StaticResource TabBGColor}">
-            <RelativeLayout>
-                <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}"
-                       Text="{Binding Name}"/>
-                <Label FontSize="10" TextColor="{StaticResource ListTextColor}"
-                       Text="{Binding MatchDate}"/>
-            </RelativeLayout>
-        </Frame>
-        <Button x:Name="FukenButon" Text="Work" TextColor="Transparent" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Clicked="OnTapped" BackgroundColor="Red"></Button>
-    </Grid>
-
+                    </Grid>
+                    <Button
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=1, Property=X, Constant =0}"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1, Property=Y, Constant=0}"
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}"
+                        Text="Work"
+                        TextColor="Transparent"
+                        Clicked="OnTapped"
+                        BackgroundColor="Transparent"/>
+                </RelativeLayout>
             </Frame>
-
-            <Frame BorderColor="Transparent"
-            Grid.Row="0"
-            Grid.Column="1"
-                Padding="0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="140" />
-                        <RowDefinition Height="50" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Frame
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        BorderColor="Transparent"
-                        Padding="0"
-                        BackgroundColor="Aquamarine">
-                        <Label Text="Dis is img"></Label>
-                    </Frame>
-
-                    <Frame
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        BorderColor="Transparent"
-                        Padding="5"
-                        BackgroundColor="{StaticResource TabBGColor}">
-                        <StackLayout Orientation="Vertical">
-                            <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}" Text="IM da title"/>
-                            <Label FontSize="10" TextColor="{StaticResource ListTextColor}" Text="IM da subtitle"/>
-                        </StackLayout>
-                    </Frame>
-
-                </Grid>
-
+            <Frame BorderColor="Transparent" Grid.Row="0" Grid.Column="1" Padding="0">
+                <RelativeLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Row="0" Grid.Column="0" BorderColor="Transparent" Padding="0" BackgroundColor="Aquamarine">
+                            <Label Text="Dis is img"/>
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="0" BorderColor="Transparent" Padding="5" BackgroundColor="{StaticResource TabBGColor}">
+                            <StackLayout Orientation="Vertical">
+                                <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}" Text="IM da title"/>
+                                <Label FontSize="10" TextColor="{StaticResource ListTextColor}" Text="IM da subtitle"/>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </RelativeLayout>
             </Frame>
-
-            <Label Text="{Binding Id}"></Label>
-            <Label Text="{Binding Name}"></Label>
-            <Label Text="{Binding MatchDate}"></Label>
-
+            <!--<Label Text="{Binding Id}"/>
+            <Label Text="{Binding Name}"/>
+            <Label Text="{Binding MatchDate}"/>-->
         </Grid>
-        <Button x:Name="Fuken2Buton" Text="Work" TextColor="Transparent" Clicked="OnTapped" BackgroundColor="Red"></Button>
-
-    </RelativeLayout>
+        <!--<Button
+            x:Name="Fuken2Buton" Text="Work" TextColor="Transparent" Clicked="OnTapped" BackgroundColor="Orchid"/>-->
+    </StackLayout>
 </ContentPage>
