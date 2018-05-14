@@ -21,11 +21,12 @@
         </StackLayout>
 
         <ListView
-              x:Name="PlayersListView"
-              HasUnevenRows="false"
-              SeparatorVisibility="Default"
-              SeparatorColor="{StaticResource ListSeparator}"
-              RowHeight="80"
+            x:Name="PlayersListView"
+            ItemSelected="VoteForPlayer"
+            HasUnevenRows="false"
+            SeparatorVisibility="Default"
+            SeparatorColor="{StaticResource ListSeparator}"
+            RowHeight="80"
                   >
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -51,6 +52,7 @@
                             </StackLayout>
                             <StackLayout Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center">
                                 <Button 
+                                    
                                     x:Name="MyButton" 
                                     BackgroundColor="Transparent"
                                     >

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,8 @@ namespace PlayeroftheGame.Pages
         private string apiEndpoint = "";
         private int matchId;
         private int teamId;
-        private int voteBatchId;
+        // hardcode much? 
+        private int voteBatchId = 1116;
 
         public VotePlayersPage (int matchId, int teamId)
 		{
@@ -91,10 +93,24 @@ namespace PlayeroftheGame.Pages
 
             HttpResponseMessage res = await PostVote(IMEI, this.matchId, selectedPlayer.Id, this.voteBatchId);
 
-            if (res.StatusCode.ToString() == "201")
+            string statuscode = res.StatusCode.ToString();
+
+            switch (statuscode)
             {
-                await DisplayAlert("sucsses", "Your vote was accepted", "dismiss");
+                case "Created":
+                    await DisplayAlert("Sucsses", "Thanks for your vote", "dismiss");
+                    break;
+                case "Conflict":
+                    await DisplayAlert("Sorry", "You have already voted in this match", "Okay");
+                    break;
+                case "BadRequest":
+                    await DisplayAlert("Error", "Request error", "dismiss");
+                    break;
+                default:
+                    await DisplayAlert("Error", "Internal error", "dismiss");
+                    break;
             }
+            
         }
 
     }
