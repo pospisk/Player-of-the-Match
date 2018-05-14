@@ -9,8 +9,7 @@
 
              Title="{Binding Name}">
 
-
-    <StackLayout>
+    <RelativeLayout>
 
         <Grid Padding="15"
         BackgroundColor="{StaticResource AppBGColor}"
@@ -28,47 +27,52 @@
                 CornerRadius="0"
                 Padding="0"
                 BorderColor="Transparent"
+                Grid.Row="0"
+                Grid.Column="0"
+                >
+
+
+    <Grid RowSpacing="0"
+          BackgroundColor="{StaticResource TabBGColor}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Frame
+            CornerRadius="0"
             Grid.Row="0"
-            Grid.Column="0">
+            Grid.Column="0"
+            BorderColor="Transparent"
+            Padding="0"
+            BackgroundColor="Aquamarine"
+        >
+            <Label Text="Dis is img"></Label>
+        </Frame>
 
-                <Grid RowSpacing="0"
-                      BackgroundColor="{StaticResource TabBGColor}">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="140" />
-                        <RowDefinition Height="50" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+        <Frame
+            Grid.Row="1"
+            Grid.Column="0"
+            BorderColor="Transparent"
+            Padding="5"
+            BackgroundColor="{StaticResource TabBGColor}">
+            <RelativeLayout>
+                <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}"
+                       Text="{Binding Name}"/>
+                <Label FontSize="10" TextColor="{StaticResource ListTextColor}"
+                       Text="{Binding MatchDate}"/>
+            </RelativeLayout>
+        </Frame>
+        <Button x:Name="FukenButon" Text="Work" TextColor="Transparent" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Clicked="OnTapped" BackgroundColor="Red"></Button>
+    </Grid>
 
-                    <Frame
-                        CornerRadius="0"
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        BorderColor="Transparent"
-                        Padding="0"
-                        BackgroundColor="Aquamarine">
-                        <Label Text="Dis is img"></Label>
-                    </Frame>
-
-                    <Frame
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    BorderColor="Transparent"
-                    Padding="5"
-                    BackgroundColor="{StaticResource TabBGColor}">
-                     <StackLayout Orientation="Vertical">
-                            <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}"
-                                   Text="{Binding Name}"/>
-                            <Label FontSize="10" TextColor="{StaticResource ListTextColor}"
-                                   Text="{Binding MatchDate}"/>
-                     </StackLayout>
-                    </Frame>
-
-                </Grid>
             </Frame>
 
-            <Frame
+            <Frame BorderColor="Transparent"
             Grid.Row="0"
             Grid.Column="1"
                 Padding="0">
@@ -111,6 +115,7 @@
             <Label Text="{Binding MatchDate}"></Label>
 
         </Grid>
-    </StackLayout>
+        <Button x:Name="Fuken2Buton" Text="Work" TextColor="Transparent" Clicked="OnTapped" BackgroundColor="Red"></Button>
 
+    </RelativeLayout>
 </ContentPage>
