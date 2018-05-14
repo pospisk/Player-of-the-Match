@@ -36,10 +36,10 @@
                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1, Property=Y, Constant=0}"
                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}"
-                        Text="{Binding TeamId}"
+                        Text="{Binding Id}"
                         TextColor="Transparent"
                         Clicked="OnTapped"
-                        CommandParameter="{Binding Id}"
+                        CommandParameter="{Binding TeamId}"
                         BackgroundColor="Transparent"/>
                 </RelativeLayout>
             </Frame>

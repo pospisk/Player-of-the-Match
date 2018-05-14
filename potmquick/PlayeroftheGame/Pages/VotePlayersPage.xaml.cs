@@ -17,11 +17,11 @@ namespace PlayeroftheGame.Pages
 	public partial class VotePlayersPage : ContentPage
 	{
         private static string apiPath = "http://api.potg-dev.org/umbraco/api/";
+        private static HttpClient client;
         private string apiEndpoint = "";
         private int matchId;
         private int teamId;
         private int voteBatchId;
-        static HttpClient client;
 
         public VotePlayersPage (int matchId, int teamId)
 		{
@@ -42,8 +42,9 @@ namespace PlayeroftheGame.Pages
         public async void GetPlayers(int teamId)
         {
             apiEndpoint = "Player/getPlayers?parentId=";
+            string url = apiPath + apiEndpoint;
 
-            string response = await client.GetStringAsync(apiPath + teamId);
+            string response = await client.GetStringAsync(url + teamId);
 
             List<Player> players = JsonConvert.DeserializeObject<List<Player>>(response);
 

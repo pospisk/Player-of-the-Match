@@ -45,7 +45,7 @@ namespace PlayeroftheGame.Pages
 
 
 
-	        await ((NavigationPage)Application.Current.MainPage).PushAsync(new VotePlayersPage(matchId, teamId));
+	        await ((NavigationPage)Application.Current.MainPage).PushAsync(new VotePlayersPage(matchId: matchId, teamId: teamId));
 
 	    }
 
