@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using PlayeroftheGame.interfaces;
 using PlayeroftheGame.Models;
 using PlayeroftheGame.Pages;
 using Xamarin.Forms;
@@ -19,6 +20,7 @@ namespace PlayeroftheGame.Pages
         private string apiEndpoint = "";
         private int matchId;
         private int teamId;
+        private int voteBatchId;
         static HttpClient client;
 
         public VotePlayersPage (int matchId, int teamId)
@@ -48,7 +50,7 @@ namespace PlayeroftheGame.Pages
             PlayersListView.ItemsSource = players;
         }
 
-        protected async Task<HttpResponseMessage> PostVote(int IMEI, int matchId, int playerId, int voteBatchId)
+        protected async Task<HttpResponseMessage> PostVote(string IMEI, int matchId, int playerId, int voteBatchId)
         {
             apiEndpoint = "Vote/commitVote";
             string url = apiPath + apiEndpoint;
@@ -83,7 +85,15 @@ namespace PlayeroftheGame.Pages
 
             Player selectedPlayer = (e.SelectedItem as Player);
 
+            IDevice device = DependencyService.Get<IDevice>();
+            string IMEI = device.GetIdentifier();
 
+            HttpResponseMessage res = await PostVote(IMEI, this.matchId, selectedPlayer.Id, this.voteBatchId);
+
+            if (res.StatusCode.ToString() == "201")
+            {
+                await DisplayAlert("sucsses", "Your vote was accepted", "dismiss");
+            }
         }
 
     }

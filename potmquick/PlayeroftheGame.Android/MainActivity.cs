@@ -6,6 +6,22 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Provider;
+using XFUniqueIdentifier.Droid;
+using PlayeroftheGame.interfaces;
+using Xamarin.Forms;
+
+[assembly: Xamarin.Forms.Dependency(typeof(AndroidDevice))]
+namespace XFUniqueIdentifier.Droid
+{
+    public class AndroidDevice : IDevice
+    {
+        public string GetIdentifier()
+        {
+            return Settings.Secure.GetString(resolver: Android.App.Application.Context.ContentResolver, name: Settings.Secure.AndroidId);
+        }
+    }
+}
 
 namespace PlayeroftheGame.Droid
 {
@@ -24,4 +40,5 @@ namespace PlayeroftheGame.Droid
         }
     }
 }
+
 

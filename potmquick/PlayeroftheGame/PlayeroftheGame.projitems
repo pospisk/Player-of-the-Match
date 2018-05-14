@@ -16,6 +16,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)interfaces\IDevice.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Player.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Sponsor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Vote.cs" />
@@ -88,8 +89,5 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)interfaces\" />
   </ItemGroup>
 </Project>
