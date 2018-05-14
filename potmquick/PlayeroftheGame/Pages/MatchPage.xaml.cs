@@ -37,26 +37,33 @@ namespace PlayeroftheGame.Pages
 	    }
 
 
-	    public async void OnTapped(object sender, EventArgs e)
+	    public async void OnTapped(object sender , EventArgs e)
 	    {
-	       await DisplayAlert("OH", "YES", "BABY");
+	        Button btn = (Button)sender;
+	        var matchId = int.Parse(btn.Text.ToString()) ;
+	        var teamId = int.Parse(btn.CommandParameter.ToString());
+
+
+
+	        await ((NavigationPage)Application.Current.MainPage).PushAsync(new VotePlayersPage(matchId, teamId));
+
 	    }
 
 
-	    //public async void MatchClubClicked(object sender, SelectedItemChangedEventArgs e)
-	    //{
-	    //    if (e.SelectedItem == null) return; // don't do anything if we just de-selected the row
+        //public async void MatchClubClicked(object sender, SelectedItemChangedEventArgs e)
+        //{
+        //    if (e.SelectedItem == null) return; // don't do anything if we just de-selected the row
 
-	    //    int matchId = (e.SelectedItem as Match).Id;
+        //    int matchId = (e.SelectedItem as Match).Id;
 
-	    //    //string page = Application.Current.MainPage.Navigation.NavigationStack.Last().ToString();
-	    //    //if (page != "PlayeroftheGame.MatchesPage")
+        //    //string page = Application.Current.MainPage.Navigation.NavigationStack.Last().ToString();
+        //    //if (page != "PlayeroftheGame.MatchesPage")
 
-	    //    await ((NavigationPage)Application.Current.MainPage).PushAsync(new MatchPage(matchId));
+        //    await ((NavigationPage)Application.Current.MainPage).PushAsync(new MatchPage(matchId));
 
 
-	    //    //((ListView)sender).SelectedItem = null; // de-select the row
+        //    //((ListView)sender).SelectedItem = null; // de-select the row
 
-	    //}
+        //}
     }
 }
