@@ -110,7 +110,9 @@ namespace PlayeroftheGame.Pages
                     await DisplayAlert("Error", "Internal error", "dismiss");
                     break;
             }
-            
+
+            ((ListView)sender).SelectedItem = null; 
+
         }
 
     }

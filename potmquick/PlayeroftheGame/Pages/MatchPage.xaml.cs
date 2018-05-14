@@ -15,20 +15,26 @@ namespace PlayeroftheGame.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MatchPage : ContentPage
 	{
-	    private static string apiPath = "http://api.potg-dev.org/umbraco/Api/Match/GetMatch?matchId=";
-
+        private static string apiPath = "http://api.potg-dev.org/umbraco/api/";
+        private static HttpClient client;
+        private string apiEndpoint = "";
+        private int matchId;
 
         public MatchPage (int matchId)
 		{
-			InitializeComponent ();
+            this.matchId = matchId;
+            client = new HttpClient();
+
+            InitializeComponent ();
             GetMatch(matchId);
 		}
 
 	    public async void GetMatch(int matchId)
 	    {
-	        HttpClient client = new HttpClient();
+            apiEndpoint = "Match/GetMatch?matchId=";
+            string url = apiPath + apiEndpoint;
 
-	        var response = await client.GetStringAsync( apiPath + matchId);
+            var response = await client.GetStringAsync( url + matchId);
 
 	        Match match = JsonConvert.DeserializeObject<Match>(response);
 
