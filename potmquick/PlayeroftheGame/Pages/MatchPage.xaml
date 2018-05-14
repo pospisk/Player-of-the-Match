@@ -19,7 +19,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Frame CornerRadius="0" Padding="0" BorderColor="Transparent" Grid.Row="0" Grid.Column="0" BackgroundColor="SkyBlue">
-                <RelativeLayout Padding="0" BackgroundColor="{StaticResource TabBGColor}">
+                <RelativeLayout Padding="0" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource TabBGColor}">
                     <Grid RowSpacing="0" BackgroundColor="{StaticResource TabBGColor}"
                           HorizontalOptions="FillAndExpand">
                         <Grid.RowDefinitions>
@@ -29,8 +29,8 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Frame Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" BorderColor="Transparent" Padding="0" BackgroundColor="Aquamarine">
-                            <Label Text="Team"/>
+                        <Frame Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" BorderColor="Transparent" Margin="0" Padding="5" >
+                            <Image WidthRequest="155" Aspect="AspectFit" Source="{Binding ClubImagePath}" />
                         </Frame>
                         <Frame Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" BorderColor="Transparent" Padding="5" BackgroundColor="{StaticResource TabBGColor}">
                             <StackLayout Orientation="Vertical">
@@ -63,12 +63,12 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Frame Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" BorderColor="Transparent" Padding="0" BackgroundColor="Aquamarine">
-                            <Label Text="opponent"/>
+                        <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" HorizontalOptions="FillAndExpand" BorderColor="Transparent" Margin="0" Padding="5" >
+                            <Image WidthRequest="155" Aspect="AspectFit" Source="{Binding OpponentClubImagePath}" />
                         </Frame>
                         <Frame Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" BorderColor="Transparent" Padding="5" BackgroundColor="{StaticResource TabBGColor}">
                             <StackLayout Orientation="Vertical">
-                                <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}" Text="{Binding OpponentId}"/>
+                                <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}" Text="{Binding OpponentName}"/>
                                 <Label FontSize="10" TextColor="{StaticResource ListTextColor}" Text="{Binding MatchDate}"/>
                             </StackLayout>
                         </Frame>
