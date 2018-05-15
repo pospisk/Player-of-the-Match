@@ -16,9 +16,9 @@ namespace PlayeroftheGame
 		{
 			InitializeComponent ();
 		}
-        private void WithoutLogin_Clicked(object sender, EventArgs e)
+        public async void WithoutLogin_Clicked(object sender, EventArgs e)
         {
-           // Navigation.PushAsync(new ClubsPage());
+            await ((NavigationPage)Application.Current.MainPage).PushAsync(new MatchesPage());
         }
     }
 }

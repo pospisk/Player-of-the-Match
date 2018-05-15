@@ -76,41 +76,4 @@
         </ListView>
     </StackLayout>
 
-
-
-    <!--<ListView x:Name="MatchesListView"
-              BackgroundColor="{StaticResource ListBGColor}"
-              SeparatorVisibility="Default"
-              SeparatorColor="{StaticResource ListSeparator}"
-              RowHeight="80">
-
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout
-                        Orientation="Horizontal"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center">
-                        <StackLayout
-                            VerticalOptions="Center">
-                            <skia:SKCanvasView x:Name="canvasView" PaintSurface="OnPaintSample">
-                            </skia:SKCanvasView>
-                        </StackLayout>
-                        <StackLayout
-                            Orientation="Vertical"
-                            VerticalOptions="Center">
-                            <Label  FontSize="16" TextColor="{StaticResource ListTextColor}" Text="{Binding Name}"/>
-                            <Label  FontSize="14" TextColor="{StaticResource ListSubTextColor}" Text="{Binding MatchDate}"/>
-                        </StackLayout>
-                        <Button
-                            HorizontalOptions="End"
-                            Text="arrow"
-                            TextColor="{StaticResource LightTextColor}"/>
-
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>-->
-
 </ContentPage>

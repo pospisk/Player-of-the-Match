@@ -62,7 +62,7 @@ namespace PlayeroftheGame
             {
                 await ((NavigationPage)Application.Current.MainPage).PushAsync(new MatchesPage());
             }
-
+            
         }
 
         public async void BtnLogin(object sender, EventArgs e)
@@ -72,6 +72,7 @@ namespace PlayeroftheGame
             {
                 await((NavigationPage)Application.Current.MainPage).PushAsync(new LoginPage());
             }
+            
 
         }
 

@@ -39,7 +39,6 @@ namespace PlayeroftheGame.Pages
 	        Match match = JsonConvert.DeserializeObject<Match>(response);
 
 	        BindingContext = match;
-
 	    }
 
 
@@ -48,28 +47,9 @@ namespace PlayeroftheGame.Pages
 	        Button btn = (Button)sender;
 	        var matchId = int.Parse(btn.Text.ToString()) ;
 	        var teamId = int.Parse(btn.CommandParameter.ToString());
+            
+            await ((NavigationPage)Application.Current.MainPage).PushAsync(new VotePlayersPage(matchId: matchId, teamId: teamId));
+        }
 
-
-
-	        await ((NavigationPage)Application.Current.MainPage).PushAsync(new VotePlayersPage(matchId: matchId, teamId: teamId));
-
-	    }
-
-
-        //public async void MatchClubClicked(object sender, SelectedItemChangedEventArgs e)
-        //{
-        //    if (e.SelectedItem == null) return; // don't do anything if we just de-selected the row
-
-        //    int matchId = (e.SelectedItem as Match).Id;
-
-        //    //string page = Application.Current.MainPage.Navigation.NavigationStack.Last().ToString();
-        //    //if (page != "PlayeroftheGame.MatchesPage")
-
-        //    await ((NavigationPage)Application.Current.MainPage).PushAsync(new MatchPage(matchId));
-
-
-        //    //((ListView)sender).SelectedItem = null; // de-select the row
-
-        //}
     }
 }

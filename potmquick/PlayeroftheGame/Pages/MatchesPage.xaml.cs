@@ -33,8 +33,6 @@ namespace PlayeroftheGame
 		{
 			InitializeComponent ();
             GetMatches();
-	
-
         }
 
 	    private void OnPaintSample(object sender, SKPaintSurfaceEventArgs e)
@@ -61,35 +59,16 @@ namespace PlayeroftheGame
 
 	        MatchesListView.ItemsSource = matches;
 	    }
-
-	    //public async void GetMatch(int Id)
-	    //{
-	    //    HttpClient client = new HttpClient();
-
-	    //    var response = await client.GetStringAsync("http://www.api.potg-dev.org/umbraco/api/match/getmatches?parentid=" + Id);
-
-	    //    var match = JsonConvert.DeserializeObject<List<Match>>(response);
-
-	    //    //MatchListView.ItemsSource = match;
-	    //}
-
-
-
-
-
+        
         public async void ListClicked(object sender, SelectedItemChangedEventArgs e)
 	    {
-	        if (e.SelectedItem == null) return; // don't do anything if we just de-selected the row
+	        if (e.SelectedItem == null) return; 
 
 	        int matchId = (e.SelectedItem as Match).Id ;
 
-            //string page = Application.Current.MainPage.Navigation.NavigationStack.Last().ToString();
-            //if (page != "PlayeroftheGame.MatchesPage")
-
             await ((NavigationPage)Application.Current.MainPage).PushAsync(new MatchPage(matchId));
-
-
-            //((ListView)sender).SelectedItem = null; // de-select the row
+            
+            ((ListView)sender).SelectedItem = null; 
 
         }
     }
