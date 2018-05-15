@@ -10,8 +10,10 @@
     Title="{Binding Name}">
     
     <StackLayout>
-        <Grid Padding="15" BackgroundColor="{StaticResource AppBGColor}" ColumnSpacing="25">
+        <Grid Padding="15" BackgroundColor="{StaticResource AppBGColor}" ColumnSpacing="25" RowSpacing="25">
             <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -69,7 +71,30 @@
                         <Frame Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" BorderColor="Transparent" Padding="5" BackgroundColor="{StaticResource TabBGColor}">
                             <StackLayout Orientation="Vertical">
                                 <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}" Text="{Binding OpponentName}"/>
-                                <Label FontSize="10" TextColor="{StaticResource ListTextColor}" Text="{Binding MatchDate}"/>
+                                
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </RelativeLayout>
+            </Frame>
+            <Frame CornerRadius="0" Padding="0" BorderColor="Transparent" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="SkyBlue">
+                <RelativeLayout Padding="0" BackgroundColor="{StaticResource TabBGColor}">
+                    <Grid RowSpacing="0" BackgroundColor="{StaticResource TabBGColor}"
+                          HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" HorizontalOptions="FillAndExpand" BorderColor="Transparent" Margin="0" Padding="5" >
+                            <Image WidthRequest="320" Aspect="AspectFit" Source="{Binding SponsorImagePath}" />
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" BorderColor="Transparent" Padding="5" BackgroundColor="{StaticResource TabBGColor}">
+                            <StackLayout Orientation="Vertical">
+                                <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}" Text="{Binding SponsorName}"/>
+                                
                             </StackLayout>
                         </Frame>
                     </Grid>

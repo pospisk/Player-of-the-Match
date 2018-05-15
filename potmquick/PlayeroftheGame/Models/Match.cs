@@ -14,8 +14,10 @@ namespace PlayeroftheGame.Models
         public int OpponentId { get; set; }
         public string OpponentName { get; set; }
         public string OpponentClubImagePath { get; set; }
-        public int Sponsor { get; set; }
         public int TeamId { get; set; }
         public string TeamName { get; set; }
+        public int SponsorId { get; set; }
+        public string SponsorName { get; set; }
+        public string SponsorImagePath { get; set; }
     }
 }
