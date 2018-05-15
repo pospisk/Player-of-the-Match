@@ -1,5 +1,7 @@
 # PlayeroftheGame EAL Web development
 2nd of April - 15th of May, 2018
+
+
 developed by [*Kristian Guld*](https://github.com/kjsguld/) & [*Kristian Pospis*](https://github.com/pospisk/)
 ## Packages: 
 - [Xamarin Forms](https://github.com/xamarin/Xamarin.Forms),
