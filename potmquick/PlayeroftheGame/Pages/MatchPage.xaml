@@ -34,7 +34,7 @@
                         </Frame>
                         <Frame Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" BorderColor="Transparent" Padding="5" BackgroundColor="{StaticResource TabBGColor}">
                             <StackLayout Orientation="Vertical">
-                                <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}" Text="{Binding Name}"/>
+                                <Label VerticalTextAlignment="End" FontAttributes="Bold" FontSize="13" TextColor="{StaticResource LinkGrayColor}" Text="{Binding TeamName}"/>
                                 <Label FontSize="10" TextColor="{StaticResource ListTextColor}" Text="{Binding MatchDate}"/>
                             </StackLayout>
                         </Frame>

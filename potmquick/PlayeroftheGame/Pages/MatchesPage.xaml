@@ -64,8 +64,8 @@
                                     <Button.Image>
                                         <OnPlatform x:TypeArguments="FileImageSource"
                                                 iOS="arrow"
-                                                Android="arrow_25.png"
-                                                WinPhone="assets/arrow_25.png" />
+                                                Android="arrow.png"
+                                                WinPhone="assets/arrow.png" />
                                     </Button.Image>
                                 </Button>
                             </StackLayout>
